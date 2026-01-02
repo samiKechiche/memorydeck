@@ -19,51 +19,32 @@ to create decks, manage cards, practice efficiently, and track learning progress
 
 ## Screenshots
 
-\## Screenshots
-
-
-
-\### Deck List
-
+### Deck List
 Overview of all decks with search and sorting options.
 
-!\[Deck List](docs/screenshots/deck-list.png)
+![Deck List](docs/screenshots/deck-list.png)
 
-
-
-\### Deck Details
-
+### Deck Details
 Deck information, card creation, and card management.
 
-!\[Deck Details – Info](docs/screenshots/deck-details-info.png)
+![Deck Details – Info](docs/screenshots/deck-details-info.png)
+![Deck Details – Cards](docs/screenshots/deck-details-cards.png)
 
-!\[Deck Details – Cards](docs/screenshots/deck-details-cards.png)
-
-
-
-\### Practice Session
-
+### Practice Session
 Flashcard practice flow with question and answer states.
 
-!\[Practice Session – Front](docs/screenshots/practice-front.png)
+![Practice Session – Front](docs/screenshots/practice-front.png)
+![Practice Session – Back](docs/screenshots/practice-back.png)
 
-!\[Practice Session – Back](docs/screenshots/practice-back.png)
-
-
-
-\### Practice Summary
-
+### Practice Summary
 Session results with performance statistics.
 
-!\[Practice Summary](docs/screenshots/practice-summary.png)
+![Practice Summary](docs/screenshots/practice-summary.png)
 
-
-
-\### Practice History
-
+### Practice History
 History of completed sessions with filtering and statistics.
 
-!\[Practice History](docs/screenshots/practice-history.png)
+![Practice History](docs/screenshots/practice-history.png)
 
 
 
