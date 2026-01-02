@@ -1,0 +1,67 @@
+<div class="page">
+
+  @if (loading) {
+    <p class="muted center">Loading practice session...</p>
+  } @else {
+
+    <header class="practice-header">
+      <div>
+        <h2 class="page-title">{{ deckName }}</h2>
+        <p class="muted">
+          Started at {{ sessionStart | date:'short' }}
+        </p>
+      </div>
+
+      <button class="btn-danger" (click)="endSessionEarly()">
+        End Session
+      </button>
+    </header>
+
+    @if (currentCard) {
+
+      <p class="progress">
+        Card {{ currentIndex + 1 }} / {{ cards.length }}
+      </p>
+
+      <div class="flashcard">
+        <div class="flashcard-content">
+          @if (!showBack) {
+            <p class="card-text">
+              {{ currentCard.frontText }}
+            </p>
+          } @else {
+            <p class="card-text back">
+              {{ currentCard.backText }}
+            </p>
+          }
+        </div>
+      </div>
+
+      <div class="actions">
+        @if (!showBack) {
+          <button class="btn-secondary" (click)="showBack = true">
+            Show Answer
+          </button>
+          <button class="btn-ghost" (click)="answer('skipped')">
+            Skip
+          </button>
+        } @else {
+          <button class="btn-primary" (click)="answer('correct')">
+            Correct
+          </button>
+          <button class="btn-danger" (click)="answer('incorrect')">
+            Incorrect
+          </button>
+        }
+      </div>
+
+    } @else {
+      <div class="center">
+        <p>No cards to practice.</p>
+        <a routerLink="/decks">← Back to decks</a>
+      </div>
+    }
+
+  }
+
+</div>

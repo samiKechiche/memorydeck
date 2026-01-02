@@ -1,0 +1,98 @@
+<div class="deck-details-page">
+
+  <h2 class="page-title">Deck Details</h2>
+
+  @if (deck) {
+
+    <div class="card deck-meta">
+      <div class="deck-name-row">
+        <strong>Name:</strong>
+
+        @if (!editingName) {
+          <span class="deck-name">{{ deck.name }}</span>
+          <button class="btn-ghost" (click)="startRename()">Rename</button>
+        } @else {
+          <input class="input" [(ngModel)]="newDeckName" />
+          <button class="btn-primary" (click)="saveRename()">Save</button>
+          <button class="btn-secondary" (click)="cancelRename()">Cancel</button>
+        }
+      </div>
+
+      <p><strong>Owner:</strong> {{ deck.owner }}</p>
+      <p><strong>Created:</strong> {{ deck.createdAt | date:'medium' }}</p>
+      <p><strong>Last updated:</strong> {{ deck.updatedAt | date:'medium' }}</p>
+      <p><strong>Cards:</strong> {{ cards.length }}</p>
+    </div>
+
+<div class="card">
+  <h3 class="card-title">Add Card</h3>
+
+  <div class="add-card-fields">
+    <input class="input" [(ngModel)]="newFront" placeholder="Front text" />
+
+    <div class="field-separator"></div>
+
+    <textarea
+      class="textarea"
+      [(ngModel)]="newBack"
+      placeholder="Back text"
+    ></textarea>
+
+    <button class="btn-primary" (click)="createCard()">Add Card</button>
+  </div>
+</div>
+
+
+    <div class="card">
+      <h3 class="card-title">Cards</h3>
+
+      @if (cards.length === 0) {
+        <p class="muted">This deck is empty.</p>
+      } @else {
+        <ul class="card-list">
+          @for (card of cards; track card.id) {
+            <li class="card-item" [class.editing]="editingCardId === card.id">
+
+
+              <div class="card-header">
+                <span class="order">{{ card.order }}.</span>
+
+                <div class="reorder-buttons">
+                  <button class="btn-ghost" (click)="moveUp(card)" [disabled]="card.order === 1">↑</button>
+                  <button class="btn-ghost" (click)="moveDown(card)" [disabled]="card.order === cards.length">↓</button>
+                </div>
+              </div>
+
+              @if (editingCardId === card.id) {
+                <input class="input" [(ngModel)]="editFront" />
+                <textarea class="textarea" [(ngModel)]="editBack"></textarea>
+
+                <div class="actions">
+                  <button class="btn-primary" (click)="saveEdit(card.id)">Save</button>
+                  <button class="btn-secondary" (click)="cancelEdit()">Cancel</button>
+                </div>
+              } @else {
+                <div class="card-text">
+                  <span><strong>Front:</strong> {{ card.frontText }}</span>
+                  <span><strong>Back:</strong> {{ card.backText }}</span>
+                </div>
+
+                <div class="actions">
+                  <button class="btn-secondary" (click)="startEdit(card)">Edit</button>
+                  <button class="danger" (click)="deleteCard(card.id)">Delete</button>
+                </div>
+              }
+
+            </li>
+          }
+        </ul>
+      }
+    </div>
+
+    <a class="back-link" routerLink="/decks">← Back to decks</a>
+
+  } @else {
+    <p>Loading deck...</p>
+  }
+
+</div>

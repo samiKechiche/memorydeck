@@ -1,0 +1,828 @@
+/* ---------- RESET ---------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* ---------- COLORS ---------- */
+:root {
+  --bg: #f5f7fb;
+  --card: #ffffff;
+  --primary: #4f46e5;
+  --primary-hover: #4338ca;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+  --error: #dc2626;
+}
+
+/* ---------- PAGE ---------- */
+body {
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+/* ---------- AUTH LAYOUT ---------- */
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.auth-card {
+  background: var(--card);
+  width: 100%;
+  max-width: 420px;
+  padding: 2.5rem;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+/* ---------- TEXT ---------- */
+.page-title {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.page-subtitle {
+  color: var(--muted);
+  margin-bottom: 1.75rem;
+  font-size: 0.95rem;
+}
+
+/* ---------- FORM ---------- */
+.form-group {
+  margin-bottom: 1.2rem;
+}
+
+label {
+  display: block;
+  font-size: 0.85rem;
+  margin-bottom: 0.4rem;
+  color: var(--muted);
+}
+
+.input {
+  width: 100%;
+  padding: 0.65rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  font-size: 0.95rem;
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+/* ---------- BUTTONS ---------- */
+.btn-primary {
+  width: 100%;
+  padding: 0.7rem;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+}
+
+/* ---------- FOOTER ---------- */
+.auth-footer {
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.auth-footer a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.auth-footer a:hover {
+  text-decoration: underline;
+}
+
+/* ---------- ERROR ---------- */
+.error-text {
+  color: var(--error);
+  font-size: 0.85rem;
+  margin-top: 0.75rem;
+  text-align: center;
+}
+
+/*deck-list css*/
+/* Page layout */
+.page {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 0 16px;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.page-title {
+  font-size: 28px;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+/* Cards */
+.card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+}
+
+.card-title {
+  margin-bottom: 12px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* Forms */
+.form-row {
+  display: flex;
+  gap: 12px;
+}
+
+.input,
+.select {
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #cbd5f5;
+  font-size: 14px;
+  width: 100%;
+}
+
+.input:focus,
+.select:focus {
+  outline: none;
+  border-color: #6366f1;
+}
+
+/* Controls */
+.controls {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.sort-controls {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.label {
+  font-size: 14px;
+  color: #475569;
+}
+
+/* Deck grid */
+.deck-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.deck-card {
+  background: linear-gradient(180deg, #ffffff, #f8fafc);
+  border-radius: 14px;
+  padding: 16px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+}
+
+.deck-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+/* Deck actions */
+.deck-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* Buttons */
+.btn-primary {
+  background: #6366f1;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 14px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.btn-primary:hover {
+  background: #4f46e5;
+}
+
+.btn-secondary {
+  background: #e0e7ff;
+  color: #3730a3;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 14px;
+  cursor: pointer;
+}
+
+.btn-danger {
+  background: #fee2e2;
+  color: #991b1b;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 14px;
+}
+
+.btn-ghost {
+  background: transparent;
+  border: none;
+  color: #475569;
+  cursor: pointer;
+}
+
+.btn-ghost:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+.page-footer {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.muted {
+  color: #64748b;
+  text-align: center;
+}
+/*practice-session.css*/
+.practice-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.progress {
+  text-align: center;
+  font-size: 14px;
+  color: #475569;
+  margin-bottom: 12px;
+}
+
+/* Flashcard */
+.flashcard {
+  max-width: 520px;
+  margin: 0 auto 24px;
+  padding: 24px;
+  background: linear-gradient(180deg, #ffffff, #f8fafc);
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  min-height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flashcard-content {
+  width: 100%;
+}
+
+.card-text {
+  font-size: 20px;
+  line-height: 1.5;
+  text-align: center;
+  color: #1e293b;
+}
+
+.card-text.back {
+  color: #334155;
+}
+
+/* Actions */
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+/* Utilities */
+.center {
+  text-align: center;
+}
+/*practice-summary.html*/
+.summary-card {
+  max-width: 520px;
+  margin: 24px auto;
+  padding: 24px;
+  background: linear-gradient(180deg, #ffffff, #f8fafc);
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Rows */
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+  margin: 12px 0;
+}
+
+.label {
+  color: #475569;
+}
+
+.value {
+  font-weight: 600;
+  color: #1e293b;
+}
+
+/* Stats list */
+.stats {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0;
+}
+
+.stat {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  font-size: 15px;
+}
+
+.stat.correct {
+  color: #15803d;
+}
+
+.stat.incorrect {
+  color: #b91c1c;
+}
+
+.stat.skipped {
+  color: #475569;
+}
+
+/* Utilities */
+.center {
+  text-align: center;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #e5e7eb;
+  margin: 16px 0;
+}
+/*practice-history*/
+/* Controls */
+.history-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.history-controls .left {
+  display: flex;
+  gap: 12px;
+}
+
+/* Table card */
+.table-card {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  overflow-x: auto;
+}
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+thead {
+  background: #f1f5f9;
+}
+
+th, td {
+  padding: 12px 14px;
+  text-align: left;
+  white-space: nowrap;
+}
+
+th {
+  color: #475569;
+  font-weight: 600;
+}
+
+tbody tr {
+  border-bottom: 1px solid #e5e7eb;
+}
+
+tbody tr:last-child {
+  border-bottom: none;
+}
+
+/* Cells */
+td.deck {
+  font-weight: 500;
+  color: #1e293b;
+}
+
+td.correct {
+  color: #15803d;
+}
+
+td.incorrect {
+  color: #b91c1c;
+}
+
+td.skipped {
+  color: #475569;
+}
+
+/* Actions */
+td.actions {
+  display: flex;
+  gap: 8px;
+}
+
+/* Empty state */
+.empty {
+  color: #64748b;
+  text-align: center;
+  margin-top: 24px;
+}
+/**/
+/* ---------- Controls ---------- */
+
+.history-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.history-controls select {
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  background: #ffffff;
+  font-size: 14px;
+}
+
+/* ---------- Buttons ---------- */
+
+button {
+  padding: 8px 14px;
+  border-radius: 10px;
+  border: none;
+  background: #2563eb;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+button:hover {
+  background: #1d4ed8;
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+/* ---------- Delete (Danger) ---------- */
+
+button.danger {
+  background: #dc2626;
+}
+
+button.danger:hover {
+  background: #b91c1c;
+}
+
+/* ---------- Logout ---------- */
+
+.logout-container {
+  margin-top: 32px;
+  text-align: center;
+}
+
+button.logout {
+  background: #e5e7eb;
+  color: #1e293b;
+  font-weight: 500;
+}
+
+button.logout:hover {
+  background: #d1d5db;
+}
+
+
+/* ---------- Table Card ---------- */
+
+.table-card {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  overflow-x: auto;
+  margin-bottom: 32px; 
+}
+
+/* ---------- Table ---------- */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+thead {
+  background: #f1f5f9;
+}
+
+th, td {
+  padding: 12px 14px;
+  text-align: left;
+  white-space: nowrap;
+}
+
+th {
+  color: #475569;
+  font-weight: 600;
+}
+
+tbody tr {
+  border-bottom: 1px solid #e5e7eb;
+}
+
+tbody tr:last-child {
+  border-bottom: none;
+}
+
+tbody tr:hover {
+  background: #f8fafc;
+}
+
+/* ---------- Cells ---------- */
+
+td.deck {
+  font-weight: 500;
+  color: #1e293b;
+}
+
+td.correct {
+  color: #15803d;
+}
+
+td.incorrect {
+  color: #b91c1c;
+}
+
+td.skipped {
+  color: #475569;
+}
+
+td.actions {
+  display: flex;
+  gap: 8px;
+}
+
+/* ---------- Back Button ---------- */
+
+.center {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.btn-secondary {
+  display: inline-block;
+  padding: 10px 16px;
+  border-radius: 12px;
+  background: #e5e7eb;
+  color: #1e293b;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.btn-secondary:hover {
+  background: #d1d5db;
+}
+
+/* ---------- Empty / Muted ---------- */
+
+.empty,
+.muted {
+  color: #64748b;
+  text-align: center;
+  margin-top: 24px;
+}
+/* deck-details*/
+
+
+.deck-details-page {
+  max-width: 760px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+/* ---------- Sections ---------- */
+
+.deck-details-page .card {
+  padding: 1.25rem;
+}
+
+/* ---------- Deck name ---------- */
+
+.deck-details-page .deck-name-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.deck-details-page .deck-name {
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+/* ---------- Add Card ---------- */
+
+.deck-details-page .add-card-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.deck-details-page .textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+/* Divider between front & back */
+.deck-details-page .field-separator {
+  height: 1px;
+  background: var(--border);
+  margin: 0.5rem 0;
+}
+
+/* ---------- Card list ---------- */
+
+.deck-details-page .card-list {
+  list-style: none;            
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+/* ---------- Individual card ---------- */
+
+/* Card item – flat & clean */
+.deck-details-page .card-item {
+  background: #ffffff;
+  
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: none; 
+}
+.deck-details-page .card-item:hover {
+  border-color: #c7d2fe;
+  border-color: var(--primary);
+  background: #eef2ff;
+}
+
+/* Edit mode spacing between fields */
+.deck-details-page .card-item input + textarea {
+  margin-top: 0.5rem;
+}
+
+/* Editing state hint */
+.deck-details-page .card-item.editing {
+  background: #eef2ff;
+  border-color: var(--primary);
+}
+
+
+.deck-details-page .card-item textarea + .actions,
+.deck-details-page .card-item textarea + button {
+  margin-top: 0.6rem;
+}
+
+/* Header (order + arrows) */
+.deck-details-page .card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.deck-details-page .order {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* ---------- Reorder arrows ---------- */
+
+.deck-details-page .reorder-buttons {
+  display: flex;
+  gap: 0.4rem;
+}
+
+
+.deck-details-page .reorder-buttons button {
+  font-size: 18px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  color: var(--primary);
+  background: #eef2ff;
+}
+
+.deck-details-page .reorder-buttons button:hover {
+  background: #e0e7ff;
+}
+
+.deck-details-page .reorder-buttons button:disabled {
+  opacity: 0.35;
+}
+
+/* ---------- Card content ---------- */
+
+.deck-details-page .card-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 0.5rem 0 0.6rem;
+}
+
+.deck-details-page .card-text span {
+  font-size: 0.95rem;
+  color: var(--text);         
+}
+
+/* Visual separator inside card */
+.deck-details-page .card-text span + span {
+  padding-top: 0.35rem;
+  border-top: 1px dashed var(--border);
+}
+
+/* ---------- Actions ---------- */
+
+.deck-details-page .actions {
+  display: flex;
+   margin-top: 0.6rem;
+  gap: 0.5rem;
+}
+
+/* ---------- Back link ---------- */
+
+.deck-details-page .back-link {
+margin-top: 0.25rem;
+  margin-bottom: 0.75rem;
+  font-size: 0.95rem;        
+  font-weight: 500;
+  color: var(--primary);
+  align-self: flex-start;
+}
+
+.deck-details-page .back-link:hover {
+  text-decoration: underline;
+}
+/* Edit mode fields – full width */
+.deck-details-page .card-item input,
+.deck-details-page .card-item textarea {
+  width: 100%;
+}

@@ -1,0 +1,65 @@
+<div class="page">
+
+  <h2 class="page-title center">Practice Summary</h2>
+
+  @if (loading) {
+    <p class="muted center">Loading summary...</p>
+  } @else {
+
+    <div class="summary-card">
+
+      <div class="summary-row">
+        <span class="label">Duration</span>
+        <span class="value">
+          {{ formatDuration(summary.durationMinutes) }}
+        </span>
+      </div>
+
+      <hr />
+
+      <ul class="stats">
+        <li class="stat correct">
+          <span>Correct</span>
+          <span>
+            {{ summary.correctCount }}
+            ({{ summary.correctPercentage }}%)
+          </span>
+        </li>
+
+        <li class="stat incorrect">
+          <span>Incorrect</span>
+          <span>
+            {{ summary.incorrectCount }}
+            ({{ summary.incorrectPercentage }}%)
+          </span>
+        </li>
+
+        <li class="stat skipped">
+          <span>Skipped</span>
+          <span>
+            {{ summary.skippedCount }}
+            ({{ summary.skippedPercentage }}%)
+          </span>
+        </li>
+      </ul>
+
+      <hr />
+
+      <div class="summary-row">
+        <span class="label">Total answered</span>
+        <span class="value">
+          {{ summary.totalAnswered }}
+        </span>
+      </div>
+
+    </div>
+
+    <div class="center">
+      <a routerLink="/decks" class="btn-secondary">
+        ← Back to decks
+      </a>
+    </div>
+
+  }
+
+</div>

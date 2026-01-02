@@ -1,0 +1,78 @@
+<div class="page">
+
+  <header class="page-header">
+    <h2 class="page-title">Welcome {{ username }}</h2>
+
+    <button class="btn-secondary" routerLink="/practice-history">
+      Practice History
+    </button>
+  </header>
+
+  <!-- Create Deck -->
+  <div class="card">
+    <h3 class="card-title">Create Deck</h3>
+
+    <div class="form-row">
+      <input
+        class="input"
+        type="text"
+        [(ngModel)]="newDeckName"
+        placeholder="Deck name"
+      />
+      <button class="btn-primary" (click)="createDeck()">Create</button>
+    </div>
+  </div>
+
+  <!-- Controls -->
+  <div class="card controls">
+    <input
+      class="input"
+      type="text"
+      placeholder="Search decks..."
+      [(ngModel)]="searchTerm"
+    />
+
+    <div class="sort-controls">
+      <label class="label">Sort by</label>
+
+      <select class="select" [(ngModel)]="sortField">
+        <option value="updatedAt">Last updated</option>
+        <option value="createdAt">Created date</option>
+      </select>
+
+      <button
+        class="btn-ghost"
+        (click)="sortDirection = sortDirection === 'asc' ? 'desc' : 'asc'"
+      >
+        {{ sortDirection === 'asc' ? '↑ Asc' : '↓ Desc' }}
+      </button>
+    </div>
+  </div>
+
+  <!-- Deck List -->
+  <div class="deck-grid">
+    @if (decks.length === 0) {
+      <p class="muted">No decks yet.</p>
+    } @else {
+      @for (deck of filteredAndSortedDecks; track deck.id) {
+        <div class="deck-card">
+          <h4 class="deck-title">{{ deck.name }}</h4>
+
+          <div class="deck-actions">
+            <button class="btn-secondary" (click)="openDeck(deck.id)">Open</button>
+            <button class="danger" (click)="deleteDeck(deck.id)">Delete</button>
+            <button class="btn-primary" (click)="startPractice(deck.id)">
+              Practice
+            </button>
+          </div>
+        </div>
+      }
+    }
+  </div>
+
+<div class="logout-container">
+  <button class="logout" (click)="logout()">Logout</button>
+</div>
+
+
+</div>

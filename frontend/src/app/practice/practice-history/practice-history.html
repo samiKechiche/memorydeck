@@ -1,0 +1,87 @@
+<div class="page">
+
+  <h2 class="page-title">Practice History</h2>
+
+  @if (loading) {
+    <p class="muted">Loading practice history...</p>
+  } @else {
+
+    <div class="history-controls">
+
+      <div class="left">
+        <select [(ngModel)]="sortOrder">
+          <option value="newest">Newest first</option>
+          <option value="oldest">Oldest first</option>
+        </select>
+
+        <select [(ngModel)]="selectedDeckId">
+          <option value="all">All decks</option>
+          @for (deckId of deckIds; track deckId) {
+            <option [value]="deckId">
+              {{ deckNames[deckId] }}
+            </option>
+          }
+        </select>
+      </div>
+
+      <button class="danger" (click)="deleteAll()">
+        Delete all
+      </button>
+
+    </div>
+
+    @if (filteredAndSortedSessions.length === 0) {
+      <p class="empty">No completed practice sessions yet.</p>
+    } @else {
+
+      <div class="table-card">
+        <table>
+          <thead>
+            <tr>
+              <th>Deck</th>
+              <th>Started</th>
+              <th>Ended</th>
+              <th>Duration</th>
+              <th>✓</th>
+              <th>✗</th>
+              <th>⏭</th>
+              <th></th>
+            </tr>
+          </thead>
+
+          <tbody>
+            @for (session of filteredAndSortedSessions; track session.id) {
+              <tr>
+                <td class="deck">
+                  {{ deckNames[session.deckId] }}
+                </td>
+                <td>{{ session.startedAt | date:'short' }}</td>
+                <td>{{ session.endedAt | date:'short' }}</td>
+                <td>{{ formatDuration(session.durationMinutes) }}</td>
+                <td class="correct">{{ session.correctCount }}</td>
+                <td class="incorrect">{{ session.incorrectCount }}</td>
+                <td class="skipped">{{ session.skippedCount }}</td>
+                <td class="actions">
+                  <button (click)="viewSummary(session.id)">Summary</button>
+                  <button class="danger small"
+                          (click)="deleteSession(session.id)">
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+
+    }
+
+    <div class="center">
+      <a routerLink="/decks" class="btn-secondary">
+        ← Back to decks
+      </a>
+    </div>
+
+  }
+
+</div>
