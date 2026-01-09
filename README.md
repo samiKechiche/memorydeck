@@ -54,9 +54,6 @@ History of completed sessions with filtering and sorting.
 This project was developed as part of a university coursework to practice
 full-stack web development, REST API design, and UML-based system modeling.
 
-## Author
-
-Sami Kechiche
 
 ---
 
@@ -130,3 +127,8 @@ Before starting, ensure that the following tools are installed on your machine:
 - **Port already in use**: Update the frontend API URL in `environment.ts` or change the backend port in `appsettings.json`.
 - **Database issues**: Stop the backend, delete `memorydeck.db`, and restart the API.
 - **CORS errors**: Ensure that the backend is running before starting the frontend.
+
+
+## Author
+
+Sami Kechiche
