@@ -51,17 +51,17 @@ History of completed sessions with filtering and sorting.
 
 ## Project Context
 
-This project was developed as part of a university coursework to practice
+This project was developed as part of a university coursework project to practice
 full-stack web development, REST API design, and UML-based system modeling.
 
 
 ---
 
-## Getting Started
+## 🚀 Getting Started
 
 This section explains how to set up and run the MemoryDeck application locally for development or testing purposes.
 
-### Prerequisites
+### 🛠️ Prerequisites
 
 Before starting, ensure that the following tools are installed on your machine:
 
@@ -69,7 +69,7 @@ Before starting, ensure that the following tools are installed on your machine:
   Required to run the ASP.NET Core backend.  
   Download: https://dotnet.microsoft.com/download/dotnet/9.0
 
-- **Node.js (v16 or higher)**  
+- **Node.js (v18 or higher)**  
   Required to run the Angular frontend.  
   Download: https://nodejs.org/
 
@@ -80,7 +80,7 @@ Before starting, ensure that the following tools are installed on your machine:
   npm install -g @angular/cli
   ```
 
-### Setup Instructions
+### ⚙️ Setup Instructions
 
 1. **Clone the Repository**
   ```bash
@@ -128,7 +128,8 @@ Before starting, ensure that the following tools are installed on your machine:
 - **Database issues**: Stop the backend, delete `memorydeck.db`, and restart the API.
 - **CORS errors**: Ensure that the backend is running before starting the frontend.
 
+---
 
-## Author
+## 👤 Author
 
 Sami Kechiche
