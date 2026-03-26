@@ -3,7 +3,14 @@
 MemoryDeck is a full-stack web-based flashcard learning application that allows users
 to create decks, manage cards, practice efficiently, and track learning progress.
 
-## Features
+## 🎥 Demo
+> A quick walkthrough of the main features and user flow:
+
+https://github.com/user-attachments/assets/f0b063a1-d138-4461-b770-732389a411c7
+
+---
+
+## ✨ Features
 
 * User registration and authentication
 * Deck and card management
@@ -18,7 +25,7 @@ to create decks, manage cards, practice efficiently, and track learning progress
 * Backend: ASP.NET Core (Web API)
 * Database: Entity Framework Core (SQLite)
 
-## Screenshots
+## 📸 Screenshots
 
 ### Deck List
 Overview of all decks with access to practice sessions.
